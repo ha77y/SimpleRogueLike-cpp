@@ -64,18 +64,25 @@ public:
     }
 };
 
-class player : public Tile
+const struct PlayerInitStats {
+    int StartHealth = 50;
+    int BaseDamage = 10;
+};
+
+class Player : public Tile
 {
 public:
-    int health;
+    int health = PlayerInitStats().StartHealth;
     int damage;
     weapon usedWeapon;
-    player(int _health, int _damage, weapon _weapon) : Tile("Player")
+    Player(weapon _weapon) : Tile("Player")
     {
-        identifier = 'x';
-        this->health = _health;
+        identifier = 'Q';
+        //this->health = PlayerInitStats().StartHealth;
         this->usedWeapon = std::move(_weapon);
-        this->damage = _damage;
+        this->damage = PlayerInitStats().BaseDamage;
+
+        cout << this->health << endl;
         
     }
     void setWeapon(weapon newWeapon)
@@ -90,7 +97,15 @@ const struct StartCoords {
     int y = 5;
 };
 
+
 Tile* map[mapWidth][mapWidth] = {};
+
+
+void PrintMap() {
+
+}
+
+
 
 int main(int argc, char* argv[])
 {
@@ -105,7 +120,10 @@ int main(int argc, char* argv[])
         }
         cout<< endl;
     }
-    //map[][];
+    Player* PlayerPointer = new Player(weapon(5));
+
+    map[StartCoords().x][StartCoords().y] = PlayerPointer;
+    
 /*
     for(int i = 0 ; i<= 8 ; i++)
         {
