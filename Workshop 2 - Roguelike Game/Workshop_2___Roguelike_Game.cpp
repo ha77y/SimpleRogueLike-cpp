@@ -1,7 +1,10 @@
 #include <iostream>
 #include <utility>
+#include <memory.h>
 
 using namespace std ;
+
+
 
 
 
@@ -9,7 +12,6 @@ class Tile
 {
 public:
     string Type;
-    int value{};
     char identifier{};
 
     Tile(string _type);
@@ -28,6 +30,9 @@ Tile::Tile() {
 
 Tile::~Tile()
 {
+    free(&identifier);
+    free(&Type);
+
     cout << " Destructor called";
 }
 
@@ -61,6 +66,12 @@ public:
         
         identifier = '/';
         this->Damage = 0;
+    }
+    ~weapon() 
+    {
+        Tile::~Tile();
+        free(&Damage);
+
     }
 };
 
@@ -106,6 +117,11 @@ void PrintMap() {
 }
 
 
+/// <summary>
+/// 
+/// 
+/// 
+/// </summary>
 
 int main(int argc, char* argv[])
 {
@@ -124,17 +140,18 @@ int main(int argc, char* argv[])
 
     map[StartCoords().x][StartCoords().y] = PlayerPointer;
     
-/*
-    for(int i = 0 ; i<= 8 ; i++)
-        {
-            for(int j = 0 ; j<=8 ; j++)
-            {
-                delete &map[i][j];
-            }
-            cout<< endl;
-        }
-*/
     
 
     //return 0;
+}
+
+
+
+void EndProcedure() {
+
+    delete map;
+
+    cout << endl;
+
+    
 }
