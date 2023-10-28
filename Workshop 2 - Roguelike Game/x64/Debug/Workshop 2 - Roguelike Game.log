@@ -1,2 +1,6 @@
 ﻿  Workshop_2___Roguelike_Game.cpp
-C:\Users\harri\OneDrive\Documents\GitHub\SimpleRogueLike-cpp\Workshop 2 - Roguelike Game\Workshop_2___Roguelike_Game.cpp(108,9): error C2059: syntax error: ']'
+C:\Users\harri\OneDrive\Documents\GitHub\SimpleRogueLike-cpp\Workshop 2 - Roguelike Game\Workshop_2___Roguelike_Game.cpp(96,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\harri\OneDrive\Documents\GitHub\SimpleRogueLike-cpp\Workshop 2 - Roguelike Game\Workshop_2___Roguelike_Game.cpp(192,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\harri\OneDrive\Documents\GitHub\SimpleRogueLike-cpp\Workshop 2 - Roguelike Game\Workshop_2___Roguelike_Game.cpp(230,23): warning C4101: 'changedy': unreferenced local variable
+C:\Users\harri\OneDrive\Documents\GitHub\SimpleRogueLike-cpp\Workshop 2 - Roguelike Game\Workshop_2___Roguelike_Game.cpp(230,13): warning C4101: 'changedx': unreferenced local variable
+  Workshop 2 - Roguelike Game.vcxproj -> C:\Users\harri\OneDrive\Documents\GitHub\SimpleRogueLike-cpp\x64\Debug\Workshop 2 - Roguelike Game.exe
